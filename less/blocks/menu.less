@@ -1,0 +1,104 @@
+.hamburger{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 36px;
+  height: 21px;
+  top: 20px;
+  right: 30px;
+  span{
+    width: 30px;
+    height: 3px;
+    background: #151812;
+  }
+  span.middle{
+    width: 36px;
+  }
+}
+.menu{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  //transition: all 0.2s;
+  &.active{
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    .menu_block{
+      left: 0;
+    }
+  }
+  &_block{
+    position: relative;
+    left: -100%;
+    width: 345px;
+    height: 100%;
+    background-color: @main_color;
+    transition: all .5s;
+    z-index: 3;
+  }
+  &_close{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+  &_list{
+    list-style-type: none;
+    padding-top: 140px;
+    padding-left: 75px;
+  }
+  &_link{
+    margin-bottom: 15px;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border: black 1px solid;
+      border-radius: 50%;
+      top: 10px;
+      left: -35px;
+      transform: rotateX(-100%);
+    }
+    a{
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 36px;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+    &:hover{
+      &:before{
+        background-color: white;
+      }
+    }
+  }
+  &_social{
+    width: 90px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.75;
+    z-index: 2;
+  }
+}
