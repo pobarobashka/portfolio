@@ -2,23 +2,43 @@
   padding-top: 120px;
   &_wrapper{
     display: grid;
-    grid-template-rows: 283px 116px 116px;
+    grid-template-rows: 283px 136px 181px;
     grid-template-columns: 670px 310px 260px;
     img{
       display: block;
       grid-column: 1;
       grid-row-start: 1;
-      grid-row-end: 3;
+      grid-row-end: 4;
 
     }
-
-    }
+  }
   &_aboutme{
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row: 1;
     &_top{
-
+      position: relative;
+      z-index: 1;
+      .before_circle
+    }
+    &_title{
+      margin-top: 6px;
+      position: relative;
+      margin-bottom: 24px;
+      &:after{
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: @main_color;
+        bottom: -1px;
+        left: 0;
+      }
+    }
+    &_description{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
     }
   }
   &_skills{
@@ -29,19 +49,25 @@
     font-size: 12px;
     line-height: 18px;
     color: #000000;
-
-    img{
-    margin-right: 25px;
+    &_img{
+      width: 25px;
+      height: 25px;
+      position: relative;
+      z-index: 1;
+      margin-top: 15px;
+      margin-right: 25px;
+      .before_circle
   }
-    &:nth-child(1){
+
+    &:nth-child(3){
       grid-column: 2;
       grid-row: 2;
     }
-    &:nth-child(2){
+    &:nth-child(4){
       grid-column: 3;
       grid-row: 2;
     }
-    &:nth-child(3){
+    &:nth-child(5){
       grid-column: 2;
       grid-row: 3;
     }
